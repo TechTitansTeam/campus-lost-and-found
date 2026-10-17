@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Feed - Campus Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🔍 Campus Finder</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/report">Report Item</a></li>
+            <li><a href="/feed" class="active">Live Feed</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h2>🔎 Quick Campus Search</h2>
+            <input type="text" id="searchInput" placeholder="Search by item name, spot, or description...">
+        </div>
+
+        <div class="card">
+            <h2>📋 Campus Posts</h2>
+            <div id="itemList">
+                {% for item in items %}
+                    <div class="item-card {{ item.type }}" data-title="{{ item.title | lower }}" data-location="{{ item.location | lower }}" data-desc="{{ item.description | lower }}">
+                        <span class="badge {{ item.type }}">{{ item.type }}</span>
+                        <h3 style="margin-top: 10px; color: #2d3436;">{{ item.title }}</h3>
+                        <p style="font-size: 13px; color: #636e72; margin: 5px 0;"><strong>📍 Spot:</strong> {{ item.location }}</p>
+                        <p style="font-size: 14px; color: #2d3436;">{{ item.description }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
