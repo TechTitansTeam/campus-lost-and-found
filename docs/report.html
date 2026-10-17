@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Item - Campus Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🔍 Campus Finder</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/report" class="active">Report Item</a></li>
+            <li><a href="/feed">Live Feed</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h2>📢 Report a Lost or Found Item</h2>
+            <form id="itemForm">
+                <label>Item Name</label>
+                <input type="text" id="title" placeholder="e.g. Blue Backpack, Rolex Watch" required>
+                
+                <label>Status</label>
+                <select id="type" required>
+                    <option value="lost">🔴 Lost Item</option>
+                    <option value="found">🟢 Found Item</option>
+                </select>
+
+                <label>Where was it lost/found?</label>
+                <input type="text" id="location" placeholder="e.g. Canteen, Block-B, Sports Ground" required>
+
+                <label>Details / Unique Marks</label>
+                <textarea id="description" rows="3" placeholder="Provide details to help identify it..." required></textarea>
+
+                <button type="submit">Submit Post</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

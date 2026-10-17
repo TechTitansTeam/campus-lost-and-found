@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Campus<span>Find</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="#report">Report Item</a>
+            <a href="#feed">Lost & Found Feed</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="tag">YOUR CAMPUS • YOUR COMMUNITY</span>
+            <h1>Lost something?<br><span>Let's find it.</span></h1>
+            <p>A simple platform to report lost items, share found belongings, and help students reconnect with their valuables.</p>
+            <div class="hero-buttons">
+                <a href="#report" class="btn primary">Report an Item</a>
+                <a href="#feed" class="btn secondary">Explore Items</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="stats">
+        <div class="stat-card">
+            <h2 id="lostCount">2</h2>
+            <p>Items Lost</p>
+        </div>
+        <div class="stat-card">
+            <h2 id="foundCount">2</h2>
+            <p>Items Found</p>
+        </div>
+        <div class="stat-card">
+            <h2 id="totalCount">4</h2>
+            <p>Total Reports</p>
+        </div>
+    </section>
+
+    <section class="section" id="report">
+        <div class="section-heading">
+            <span class="tag">CONTRIBUTE</span>
+            <h2>Report an Item</h2>
+            <p>Tell your campus community what you lost or found.</p>
+        </div>
+
+        <form id="itemForm" class="report-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="title">Item Name</label>
+                    <input id="title" type="text" placeholder="e.g. Blue Water Bottle" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Report Type</label>
+                    <select id="type" required>
+                        <option value="lost">I Lost Something</option>
+                        <option value="found">I Found Something</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input id="location" type="text" placeholder="e.g. Central Library" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="3" placeholder="Describe the item..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn primary full">Submit Report →</button>
+            <p id="message"></p>
+        </form>
+    </section>
+
+    <section class="section feed-section" id="feed">
+        <div class="section-heading">
+            <span class="tag">CAMPUS COMMUNITY</span>
+            <h2>Lost & Found Feed</h2>
+            <p>Recent reports from students.</p>
+        </div>
+
+        <div id="itemsContainer" class="items-grid"></div>
+    </section>
+
+    <footer>
+        <div class="logo">Campus<span>Find</span></div>
+        <p>Helping campus belongings find their way home.</p>
+        <p class="footer-small">Student Prototype • Campus Lost & Found</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
