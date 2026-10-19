@@ -1,4 +1,4 @@
-# 🎓 Campus Lost and Found
+## 🎓 Campus Lost and Found
 
 ### Find What's Lost. Return What's Found. Build a Better Campus.
 
